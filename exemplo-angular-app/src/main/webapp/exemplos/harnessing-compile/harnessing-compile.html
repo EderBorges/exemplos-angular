@@ -1,0 +1,14 @@
+<html ng-app="harnessing">
+<header>
+    <body ng-controller="HarnessingCtrl as ctrl">
+        <button ng-click="novosTipos()">Novos tipos</button>
+        <div ng-repeat="log in console">
+            <h3>Debugging as {{log.type || "Tipo Padrão"}}</h3>
+            <div debug="log.value" type="{{log.type}}" inner-type={{log.innerType}}></div>
+        </div>
+        <script src="../angular.min.js"></script>
+        <script src="../../lib/underscore.js"></script>
+        <script src="harnessing-compile.js"></script>
+    </body>
+</header>
+</html>
