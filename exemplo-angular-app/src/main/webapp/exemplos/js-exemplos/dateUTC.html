@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to display the local time, based on a UTC date-time.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+    function myFunction() {
+
+        var d = new Date();
+
+        var n = d.getTimezoneOffset();
+
+        var dataAtual = new Date();
+
+        dataAtual = new Date(dataAtual.getFullYear(),dataAtual.getMonth(),dataAtual.getDate());
+        var dataUTC = new Date(Date.UTC(dataAtual.getFullYear(),dataAtual.getMonth(),dataAtual.getDate()));
+        var dataAtual2 = new Date(dataUTC.getTime() + n*60*1000);
+
+
+        document.getElementById("demo").innerHTML = dataAtual + " / "+dataUTC + " / "+dataAtual2 ;
+    }
+</script>
+
+</body>
+</html>
